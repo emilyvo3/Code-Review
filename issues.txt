@@ -1,0 +1,119 @@
+Base64.c:
+
+1. First letter of the file name should be lowercase.
+Fixed: base64.c
+
+2. All indentations should be changed from 2 spaces to 4 spaces.
+
+3. Line 39: This line is more than 80 chars long. 
+Fixed: Place the array definition on a new line.
+
+4. Line 41 and following: The grammar is not correct.
+Fixed: Return the position in the base64_chars array of the matching character.
+       Encode a chunk of data in base64 format. Return a pointer to the encoded base64 string, which is NULL terminated.
+
+5. Line 43 and following: Function names should be capitalized at the beginning and mixed case.
+
+6. Line 43: The { should be on the next line.
+
+7. Line 54: /* needs to be separated from text comment
+Fix: /*
+      * Encode a chunk of data in base64 format. Return a pointer to the encoded base64 string, which is NULL terminated.
+      */
+
+8. Line 71: Missing increment/decrement condition inside the for loop.
+Fixed: for (i = 0; i < size; i++) {
+
+9. Line 99: The #define is not at top of the file.
+
+10. Line 106: variable name should be lowercase with underscore
+Fixed: token_string
+
+11. Line 143 and following: Define the unsigned ints rather than just 'unsigned'.
+Fixed: unsigned int val
+       unsigned int marker
+
+
+main.c:
+
+12. Line 10 and following: Correct grammars are needed.
+Fixed: Print usage line.
+           Take the contents of a file and convert it to base64 or uuencoded format and also convert from base64 or uuencoded formate back to the original.
+           Check number command line args, exit if there is an error.
+
+13. Line 11: Capitalize the first letter of the function name.
+Fixed: Usage()
+
+14. Line 11: Data type declaration must be on a separate line.
+
+15. Line 12: The { should be on the next line.
+
+16. Line 15 and following: Multi-line comment format should follow correct style.
+    fixed: 
+   /* 
+    * 
+    * 
+    */
+
+17. Line 26 and following: Variable name does not have underscores to separate each word.
+Fixed: file_name
+
+18. Line 52 and following: Unnecessary space between function name and ().
+
+19. Line 56 and following: Indentation is wrong on case statements.
+
+20. Line 85: Missing default case in switch statement.
+Fixed: default:
+           Usage();
+           exit(1);
+
+21. Line 89: Do not write obvious comments.
+Fixed: Remove the comment.
+
+
+main.h:
+
+22. Entire file needs #define guards.
+
+23. Needs to import libraries at the top of the file.
+
+24. All function names must be mixed case.
+Fixed: Base64Encode()
+            Base64Decode()
+            Encode()
+            Decode()
+
+25. All comments should have proper grammar in complete sentences, describing each function.
+
+26. Line 9: Variable name does not have underscores to separate each word
+Fixed: file_name
+
+
+uu.c:
+
+27. Line 41: Unnecessary extra new line at the top of the file when importing libraries/files.
+
+28. Line 45: Unnecessary extra space inside the line.
+
+29. Line 45: Comment is not before the code line.
+Fixed: /* Single character decode. */
+        #define DEC(c) (((c) - ' ') & 077) 
+
+30. Line 52 and following: Function names must be mixed case
+Fixed: Encode()
+       Decode()
+
+31. Line 107 and following: Need correct grammar by capitalizing the beginning letter of the sentence, correcting the spelling, and adding a period at the end of each sentences. 
+
+32. Line 110 and following: Variable names must be separated by underscores.
+Fixed: out_name
+       file_name
+
+33. Line 122: This line does not need to be split since it is less than 80 characters long.
+Fixed: fprintf (stderr, "no \"begin\" line\n");
+
+34. Line 132: Needs correct format for the if-statement.
+Fixed: if (buf[0] != '~) {
+
+35. Line 166: Commenting the obvious is not needed.
+Fixed: /* Loop to read and decode Base64-encoded data line-by-line. */
